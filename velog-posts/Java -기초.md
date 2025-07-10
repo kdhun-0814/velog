@@ -1,0 +1,137 @@
+<h3 id="자바-자료형">자바 자료형</h3>
+<table>
+<thead>
+<tr>
+<th><strong>자료형</strong></th>
+<th><strong>설명</strong></th>
+<th><strong>예시</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>정수</td>
+<td>int age = 20;</td>
+</tr>
+<tr>
+<td>double</td>
+<td>실수</td>
+<td>double pi = 3.14;</td>
+</tr>
+<tr>
+<td>char</td>
+<td>문자 하나</td>
+<td>char grade = 'A';</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>true/false</td>
+<td>boolean isOk = true;</td>
+</tr>
+<tr>
+<td>String</td>
+<td>문자열</td>
+<td>String name = &quot;홍길동&quot;;</td>
+</tr>
+<tr>
+<td><strong>변수</strong>란 프로그램에서 데이터를 어떻게 저장하는 명시적으로 알려주는 키워드이다.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>기본형</strong> <strong>변수</strong>는 데이터값을 직접적으로 알려주고.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>참조형</strong> <strong>변수</strong>는 데이터가 저장하는곳의 주소값을 알려준다.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr />
+<pre><code class="language-java">//기본형 변수 예시 
+int a =1;
+double a=1.0;
+char a='d';
+boolean a= false ; 
+//참조형 변수 예시
+String s =&quot;i am fine&quot;
+int[] numbers ={1,2,3,4,5,};
+클래스이름 변수이름;
+기본형을 제외한 나머지 타입(객체취급)
+Date today =new Date(); //Date 객체를 생성해서, 그주소를 today에 저장
+</code></pre>
+<hr />
+<h3 id="상수">상수</h3>
+<p>상수(constant)는 변수와 마찬가지로 <strong><em>값을 저장할수 있는  공간</em> **   이지만 **한번만 값을 저장</strong>할수 있다
+  <em>변수는 값을 저장하는 공간
+  상수는 값을 한번만 저장하는 공간</em></p>
+<p><strong>선언 방법</strong>
+상수를 선언할때는  'final'을 붙여준다</p>
+<pre><code class="language-java">//
+final int MAX_SPEED =10; //상수는 반드시 선언과 동시에 초기화를 시켜야한다.</code></pre>
+<p>이때 이미 선언된 상수는 값을 변경할수 없다 
+<del>int MAX_SPEED =11;</del>         //에러</p>
+<h3 id="리터럴">리터럴</h3>
+<p>리터럴은 <strong>자체로 값을 의미한다</strong></p>
+<pre><code class="language-java">int age = 23;
+double age =23.723256; //에러
+float age =23.7; //에러</code></pre>
+<p>23 , 23.723256 , 23.7 = 리터럴</p>
+<p>리터럴을 쓸때 논리형,문자형,문자열 등은 접미사가 따로 필요가 없지만 <strong>실수형,정수형</strong>을 쓸때는 주의해야한다</p>
+<p>변수의 타입은 <strong>저장될 값 = 리터럴</strong>에 의해 결정됨으로 리터럴 타입을 구분시켜줄 필요가 있다.</p>
+<p>위의 예시처럼 실수형을 쓸때는</p>
+<hr />
+<p>double 형의 변수를 선언하고 리터럴값 뒤에<del>** d 를 붙인다 **</del> // d는 생략이 가능
+float  형의 변수를 선언하고 리터럴값 뒤에 <strong>f</strong> 를 붙인다
+long   형의 변수를 선언하고 리터럴값 뒤에 <strong>l</strong> 을 붙인다</p>
+<pre><code class="language-java">ex)
+double age =23.723474d;
+float age = 23.4f;
+long num = 234152342 l;</code></pre>
+<hr />
+<h3 id="변수의-형변환">변수의 형변환</h3>
+<p>형변환이란? 변수나 리터럴을 다른타입으로 변환하는것</p>
+<blockquote>
+<p>형변환 방법:
+<em><strong>(타입) 피연산자</strong></em></p>
+<pre><code class="language-java">ex)
+double a=14.3;
+(int) a =14;</code></pre>
+</blockquote>
+<pre><code>실수형을 정수형으로 형변환하면 **정수부분만 ** 반환된다.
+```java
+float d=12.4f;
+int d =12;</code></pre><p><em>자동형변환:기존의값을 최대한 보존할수있는 타입으로 자동으로 형변환한다</em>
+<del>처음으로 배울때 솔직히 기존의값을 최대한 보존한다는 뜻을 이해하지 못했다</del>
+쉽게말해서 표현범위가 더넓은 타입으로 형변환을 한다-** '산술변환'**</p>
+<pre><code class="language-java">int i = 3;
+double d=1.0 +i ;
+double d =1.0 +(double) i ;
+double d =1.0 +3.0;
+System.out.printf(&quot;%f&quot;,d);
+// 출력값 =&gt; 4.0</code></pre>
+<hr />
+<h3 id="실수형-출력활용">실수형 출력활용</h3>
+<p><em>실수형에서 정수부분만 출력하기</em></p>
+<pre><code class="language-java">double d =12.53;
+int a=(int)d;
+System.out.printf(&quot;%d&quot;,a);
+//출력값=&gt;12; </code></pre>
+<p><strong>실수형에서 소숫점 n번째 자리까지 출력하기</strong>
+1.System.out.printf(&quot;%.(n)f&quot;,double변수)</p>
+<pre><code class="language-java"> //system.out.printf(”%.n”,실수형 변수)
+ //소숫점 3번째자리까지 출력
+double result =4.3563;
+system.out.printf(”%.3f”,result)</code></pre>
+<p>2.String 타입의 참조변수에 담아서 출력</p>
+<pre><code class="language-java">double result =4.2345;
+String str = String.format(&quot;%.3f&quot;,result);</code></pre>
+<h2 id="연산자">연산자</h2>
+<h3 id=""></h3>
+<ul>
+<li>산술: +, -, *, /(몫), %(나머지)</li>
+<li>비교: ==, !=, &lt;, &gt;, &lt;=, &gt;=</li>
+<li>논리: &amp;&amp;, ||, !</li>
+<li>대입: =, +=, -=, *=, /=</li>
+</ul>
